@@ -47,7 +47,6 @@ while True:
         window['t1'].update(f'Исходный граф                                                                    Текущий гамильтонов цикл',
                             visible=True)
         window['init_img'].update('pictures/initial.png', visible=True)
-        #window['t2'].update(f'Кратчайший гамильтонов цикл. Длина: {best_len}', visible=True)
         window['i_img'].update('pictures/0.png', visible=True)
         if max_n > 0:
             window['back_but'].update(visible=True, disabled=True)

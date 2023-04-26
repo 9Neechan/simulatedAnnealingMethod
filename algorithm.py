@@ -26,6 +26,7 @@ def create_graph_struct(path_arr, graph):
 
 
 def make_plt(flag, path_arr, graph, i, path_len, t):
+    """Рисует графы с помощью бибилиотеки matplotlib и сохраняет в папку pictures"""
     pos = {'0': [0, 0.25],
            '1': [-0.55, 0.25],
            '2': [-0.55, -0.4],
@@ -62,14 +63,12 @@ def make_plt(flag, path_arr, graph, i, path_len, t):
     ax.margins(0.08)
     plt.axis("off")
     plt.tight_layout()
-
     plt.savefig(snapshot_name, dpi=65, bbox_inches='tight')
     plt.close()
 
 
 def draw_graph(data, graph):
     """Визуализация графов"""
-
     flag = 'multi'
     make_plt(flag, data[0][1], graph, 0, data[0][0], data[0][3])
 
@@ -108,6 +107,7 @@ def generate_random_path(graph):
 
 
 def check_edges(path, graph):
+    """Проверяет является ли путь гамильтоновым циклом"""
     leng = -1
     for i in range(len(path)):
         if i == len(path)-1:
