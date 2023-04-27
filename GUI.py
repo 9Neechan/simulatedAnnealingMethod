@@ -13,7 +13,6 @@ layout = [[psg.Text('Введите коэффициент при понижен
                     font='Default 12', visible=False, key='t1')]] + \
          [[psg.Image('pictures/initial.png', key='init_img', visible=False, size=(10, 10))] +
           [psg.Image('pictures/0.png', key='i_img', visible=False, size=(10, 10))]] + \
-         [[psg.Text('Кратчайший гамильтонов цикл', font='Default 12', visible=False, key='t2')]] + \
          [[psg.Button('Назад', visible=False, key='back_but'), psg.Button('Далее', visible=False, key='next_but')]]
 
 n = 0
@@ -21,7 +20,7 @@ data = []
 max_n = len(data) - 1
 alpha = -1.0
 
-window = psg.Window('Метод ближайшего соседа', layout, size=(900, 600), default_element_size=(8, 1), element_padding=(1, 1), return_keyboard_events=True)
+window = psg.Window('Метод имитации отжига', layout, size=(900, 600), default_element_size=(8, 1), element_padding=(1, 1), return_keyboard_events=True)
 while True:
     event, values = window.read()
     print(event, values)
@@ -44,7 +43,7 @@ while True:
         max_n = len(data) - 1
 
         # отображаем результаты
-        window['t1'].update(f'Исходный граф                                                                    Текущий гамильтонов цикл',
+        window['t1'].update(f'Исходный граф                                                                           Текущий гамильтонов цикл',
                             visible=True)
         window['init_img'].update('pictures/initial.png', visible=True)
         window['i_img'].update('pictures/0.png', visible=True)
